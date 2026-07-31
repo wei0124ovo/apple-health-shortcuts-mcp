@@ -1,0 +1,28 @@
+{
+  "name": "apple-health-shortcuts-mcp",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A clean-room Apple Shortcuts to Cloudflare D1 to HTTP MCP bridge.",
+  "scripts": {
+    "test": "vitest run",
+    "check": "wrangler deploy --dry-run --outdir .wrangler-dist",
+    "deploy": "wrangler d1 migrations apply DB --remote && wrangler deploy",
+    "make-keys": "node scripts/make-keys.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.9",
+    "wrangler": "^4.11.1"
+  },
+  "cloudflare": {
+    "bindings": {
+      "DB": {
+        "description": "自动创建的私人健康数据小抽屉，不需要手填数据库编号。"
+      },
+      "SETUP_KEY": {
+        "description": "请填写至少 12 个字符的部署密码。部署完成后，手机设置页会用它生成两把真正的钥匙。不要使用生日或 123456。"
+      }
+    }
+  }
+}

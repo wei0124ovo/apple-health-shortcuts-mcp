@@ -1,0 +1,16 @@
+{
+  "metrics": [
+    {
+      "type": "heart_rate",
+      "value": 72,
+      "unit": "bpm",
+      "at": "2026-07-27T09:20:00+12:00"
+    },
+    {
+      "type": "heart_rate_variability",
+      "value": 48,
+      "unit": "ms",
+      "at": "2026-07-27T08:15:00+12:00"
+    }
+  ]
+}
